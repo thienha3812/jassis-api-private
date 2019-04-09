@@ -39,14 +39,14 @@ router.get('/getall',function(req,res,next){
     })
 });
 router.get('/update',function(req,res,next){
-    sequelize.query('SP_UpdateAgent 12, "abc", ":tips", ":descriptions", ":examples", ":updator_id"', {
+    sequelize.query('SP_UpdateAgent :agent_id, :agent_name, :tips, :descriptions, :examples, :updator_id', {
         replacements: {
             agent_id : req.body.agent_id,
             agent_name: req.body.agent_name,
             tips: req.body.tips,
             descriptions: req.body.descriptions,
             examples: req.body.examples,
-            create_by : req.body.create_by
+            updator_id : req.body.updator_id
         },
         type: sequelize.QueryTypes.SELECT
     }).then(val => {
