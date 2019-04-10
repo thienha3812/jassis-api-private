@@ -32,7 +32,7 @@ router.get('/delete',async function(req,res,next){
     })
 });
 router.get('/getall',function(req,res,next){
-    sequelize.query('SP_GetAllAgents').then(val => {
+    sequelize.query('SP_GetAllAgents',{ type: Sequelize.QueryTypes.SELECT }).then(val => {
         res.json(val);
     }).catch(err=>{
         res.send(err);
