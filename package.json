@@ -2,15 +2,16 @@
   "name": "jassis-api",
   "version": "0.0.0",
   "private": true,
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/thienha3812/jassis-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thienha3812/jassis-api.git"
   },
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",

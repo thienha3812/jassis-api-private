@@ -1,0 +1,68 @@
+npm ERR! Linux 4.9.125-linuxkit
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "-q" "start"
+npm ERR! node v7.10.0
+npm ERR! npm  v4.2.0
+npm ERR! path /app/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent This is most likely not a problem with npm itself
+npm ERR! enoent and is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /root/.npm/_logs/2019-04-09T17_53_49_994Z-debug.log
+npm ERR! Linux 4.9.125-linuxkit
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "-q" "start"
+npm ERR! node v7.10.0
+npm ERR! npm  v4.2.0
+npm ERR! path /app/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent This is most likely not a problem with npm itself
+npm ERR! enoent and is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /root/.npm/_logs/2019-04-09T17_53_51_332Z-debug.log
+npm ERR! Linux 4.9.125-linuxkit
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "-q" "start"
+npm ERR! node v7.10.0
+npm ERR! npm  v4.2.0
+npm ERR! path /app/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent This is most likely not a problem with npm itself
+npm ERR! enoent and is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /root/.npm/_logs/2019-04-09T17_53_53_713Z-debug.log
+npm ERR! Linux 4.9.125-linuxkit
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "-q" "start"
+npm ERR! node v7.10.0
+npm ERR! npm  v4.2.0
+npm ERR! path /app/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent ENOENT: no such file or directory, open '/app/package.json'
+npm ERR! enoent This is most likely not a problem with npm itself
+npm ERR! enoent and is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /root/.npm/_logs/2019-04-09T17_53_57_094Z-debug.log
