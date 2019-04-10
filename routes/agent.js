@@ -1,6 +1,9 @@
 const sequelize = require('../model/config');
+const Sequelize = require('sequelize');
+
 var express = require('express');
 var router = express.Router();
+
 
 router.get('/add', async function (req, res, next) {
     sequelize.query('SP_AddAgent :agent_name, :tips, :descriptions, :examples, :create_by', {
@@ -11,7 +14,7 @@ router.get('/add', async function (req, res, next) {
             examples: req.body.examples,
             create_by : req.body.create_by
         },
-        type: sequelize.QueryTypes.SELECT
+        type: Sequelize.QueryTypes.SELECT
     }).then(val => {
         res.sendStatus(200);        
     }).catch(err=>{
@@ -24,7 +27,7 @@ router.get('/delete',async function(req,res,next){
             agent_id : req.body.agent_id,
             deletor : req.body.deletor
         },
-        type: sequelize.QueryTypes.SELECT
+        type: Sequelize.QueryTypes.SELECT
     }).then(val => {
         res.sendStatus(200);        
     }).catch(err=>{
@@ -48,7 +51,7 @@ router.get('/update',function(req,res,next){
             examples: req.body.examples,
             updator_id : req.body.updator_id
         },
-        type: sequelize.QueryTypes.SELECT
+        type: Sequelize.QueryTypes.SELECT
     }).then(val => {
         res.sendStatus(200);        
     }).catch(err=>{
