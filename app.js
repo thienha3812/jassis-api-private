@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 var corsOptions = {
-  origin: 'http://localhost:8080',
+  origin: '*',
   credentials: true };
 
 // Cors
