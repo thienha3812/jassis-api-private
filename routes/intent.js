@@ -5,26 +5,31 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/add', function (req, res, next) {
-    console.log(req.body)
     sequelize.query('SP_AddIntent :agent_id, :intent_name, :description, :create_by', {
         replacements: {
-            agent_id: req.body.agent_id,
-            intent_name: req.body.intent_name,
-            description: req.body.description,
-            create_by: req.body.create_by
+            agent_id: req.body.agent.id,
+            intent_name: req.body.temp.intent_name,
+            description: '',
+            create_by: 1
         },
         type: Sequelize.QueryTypes.SELECT
     }).then(() => {
-        res.sendStatus(200);
+        res.json({
+            agent_id: req.body.agent.id,
+            intent_name: req.body.temp.intent_name,
+            description: '',
+            create_by: 1
+        });
     }).catch(err => {
         res.send(err);
     });
 });
-router.get('/delete', function (req, res, next) {
+router.post('/delete', function (req, res, next) {
+    console.log(req.body)
     sequelize.query('SP_DeleteIntent :id, :deleteor', {
         replacements: {
             id: req.body.id,
-            deleteor: req.body.deleteor
+            deleteor: 1
         },
         type: Sequelize.QueryTypes.SELECT
     }).then(() => {
@@ -33,12 +38,12 @@ router.get('/delete', function (req, res, next) {
         res.send(err);
     });
 });
-router.get('/update', function (req, res, next) {
+router.post('/update', function (req, res, next) {
     sequelize.query('SP_UpdateIntent :id, :intent_name, :description', {
         replacements: {
             id: req.body.id,
             intent_name: req.body.intent_name,
-            description: req.body.description
+            description: req.body.descriptions
         }
     }).then(() => {
         res.sendStatus(200);
