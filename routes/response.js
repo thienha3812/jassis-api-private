@@ -6,7 +6,6 @@ var router = express.Router();
 
 
 router.post('/getallbyphraseid',function(req,res,next){
-    console.log(req.body)
     sequelize.query('SP_GetResponseByPhraseID :intentid',{
         replacements : {
             intentid : req.body.id

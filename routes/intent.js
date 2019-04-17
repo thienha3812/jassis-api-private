@@ -9,7 +9,7 @@ router.post('/add', function (req, res, next) {
         replacements: {
             agent_id: req.body.agent.id,
             intent_name: req.body.temp.intent_name,
-            description: req.body.descriptions,
+            description: req.body.temp.descriptions,
             create_by: 1
         },
         type: Sequelize.QueryTypes.SELECT
@@ -25,7 +25,6 @@ router.post('/add', function (req, res, next) {
     });
 });
 router.post('/delete', function (req, res, next) {
-    console.log(req.body)
     sequelize.query('SP_DeleteIntent :id, :deleteor', {
         replacements: {
             id: req.body.id,

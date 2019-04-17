@@ -3,7 +3,6 @@ var router = express.Router();
 
 /* GET users listing. */
 router.post('/login', function (req, res, next) {
-  console.log(req.body)
   res.json({
     "code": 20000,
     "data": {
@@ -12,7 +11,6 @@ router.post('/login', function (req, res, next) {
   });
 });
 router.get('/info', function (req, res, next) {
-  console.log(req.params)
   res.json({
     'admin-token': {
       roles: ['admin'],
