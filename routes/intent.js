@@ -9,7 +9,7 @@ router.post('/add', function (req, res, next) {
         replacements: {
             agent_id: req.body.agent.id,
             intent_name: req.body.temp.intent_name,
-            description: '',
+            description: req.body.descriptions,
             create_by: 1
         },
         type: Sequelize.QueryTypes.SELECT
