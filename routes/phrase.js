@@ -34,7 +34,6 @@ router.post('/add',function(req,res,next){
     });
 })
 router.post('/update',function(req,res,next){
-    console.log(req.body)
    sequelize.query('SP_UpdatePhrase :id, :phrase, :event_key, :event_json_object, :create_by',{
        replacements : {
            id : req.body.id,
