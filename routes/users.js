@@ -1,23 +1,24 @@
+const sequelize = require('../model/config');
+const Sequelize = require('sequelize');
+
 var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
 router.post('/login', function (req, res, next) {
-  res.json({
-    "code": 20000,
-    "data": {
-      "token": "admin-token"
-    }
-  });
+    sequelize.query('CheckAccount :username, :userpass',{
+      replacements :{
+        username : req.body.username,
+        userpass : req.body.password
+      },
+      type : Sequelize.QueryTypes.SELECT
+    }).then((result)=>{
+      if(result.length ===0){
+        res.send('Failed')
+      }else{
+        res.sendStatus(200)
+      }
+    })
 });
-router.get('/info', function (req, res, next) {
-  res.json({
-    'admin-token': {
-      roles: ['admin'],
-      introduction: 'I am a super administrator',
-      avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      name: 'Super Admin'
-    }
-  });
-});
+
 module.exports = router;
