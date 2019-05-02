@@ -14,7 +14,7 @@ router.post('/login', function (req, res, next) {
       type : Sequelize.QueryTypes.SELECT
     }).then((result)=>{
       if(result.length ===0){
-        res.send('Failed')
+        res.sendStatus(403)
       }else{
         res.sendStatus(200)
       }
