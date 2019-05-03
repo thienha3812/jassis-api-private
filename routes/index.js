@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
     title: 'Express'
   });
 });
-router.get('/sentence/query', function (req, res, next) {
+router.post('/sentence/query', function (req, res, next) {
   sequelize.query('SP_GetResponse :sentence,:user_id', {
     replacements: {
       sentence: req.body.sentence,
@@ -20,10 +20,10 @@ router.get('/sentence/query', function (req, res, next) {
   }).then((result) => {
     res.send(JSON.parse(result[0]["response"])[0]);
   }).catch(err => {
-    res.send("[ { response: '-1' } ]");
+    res.send(-1);
   })
 });
-router.get('/varible/getall', function (req, res, next) {
+router.post('/varible/getall', function (req, res, next) {
   sequelize.query('SP_GetAllVarriables',{
     type : Sequelize.QueryTypes.SELECT
   }).then(result => {
