@@ -23,7 +23,7 @@ router.post('/sentence/query', function (req, res, next) {
     res.send(-1);
   })
 });
-router.post('/varible/getall', function (req, res, next) {
+router.post('/variable/getall', function (req, res, next) {
   sequelize.query('SP_GetAllVarriables',{
     type : Sequelize.QueryTypes.SELECT
   }).then(result => {
