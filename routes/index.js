@@ -27,7 +27,9 @@ router.post('/variable/getall', function (req, res, next) {
   sequelize.query('SP_GetAllVarriables',{
     type : Sequelize.QueryTypes.SELECT
   }).then(result => {
-    res.json(result);
-  });
+    res.send(JSON.parse(result[0]["response"])[0]);
+  }).catch(err=>{
+    res.send(-1);
+  })
 })
 module.exports = router;
