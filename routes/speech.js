@@ -18,9 +18,22 @@ router.post('/add',function(req,res,next){
         },
         type : Sequelize.QueryTypes.SELECT
     }).then(result=>{
-        res.send(1);
+        res.send("1");
     }).catch(err=>{
-        res.send(-1);
+        res.send("-1");
+    })
+});
+router.post('/getexisted',function(req,res,next){
+    sequelize.query('SP_GetExistedSpeech :content',{
+        replacements:{
+            content : req.body.content
+        },
+        type : Sequelize.QueryTypes.SELECT
+    }).then(result=>{
+        console.log(result)
+        res.json(result[0]["response"]);
+    }).catch(err=>{
+        res.send("-1");
     })
 });
 module.exports = router;
