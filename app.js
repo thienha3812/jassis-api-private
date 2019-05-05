@@ -10,6 +10,7 @@ var agentRouter = require('./routes/agent');
 var intentRouter = require('./routes/intent');
 var phraseRouter = require('./routes/phrase');
 var responseRouter = require('./routes/response');
+var speechRouter = require('./routes/speech');
 var app = express();
 
 // view engine setup
@@ -35,7 +36,9 @@ app.use('/user', usersRouter);
 app.use('/agent', agentRouter);
 app.use('/intent', intentRouter);
 app.use('/phrase',phraseRouter);
-app.use('/response',responseRouter)
+app.use('/response',responseRouter);
+app.use('/speech',speechRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
