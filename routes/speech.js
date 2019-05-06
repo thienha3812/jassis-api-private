@@ -30,8 +30,7 @@ router.post('/getexisted',function(req,res,next){
         },
         type : Sequelize.QueryTypes.SELECT
     }).then(result=>{
-        console.log(result)
-        res.json(result[0]["response"]);
+        res.send(JSON.parse(result[0]["response"])[0]["speech_in_base64"]);
     }).catch(err=>{
         res.send("-1");
     })
