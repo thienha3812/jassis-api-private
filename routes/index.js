@@ -4,11 +4,10 @@ const Sequelize = require('sequelize');
 var express = require('express');
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Express'
-  });
+  res.sendStatus(500);
 });
 router.post('/sentence/query', function (req, res, next) {
   sequelize.query('SP_GetResponse :sentence,:user_id', {
@@ -20,7 +19,7 @@ router.post('/sentence/query', function (req, res, next) {
   }).then((result) => {
     res.send(JSON.parse(result[0]["response"])[0]);
   }).catch(err => {
-    res.send(-1);
+    res.send('-1');
   })
 });
 router.post('/variable/getall', function (req, res, next) {
@@ -29,7 +28,7 @@ router.post('/variable/getall', function (req, res, next) {
   }).then(result => {
     res.send(JSON.parse(result[0]["response"]));
   }).catch(err=>{
-    res
+    res.send("-1");
   })
 })
 module.exports = router;
