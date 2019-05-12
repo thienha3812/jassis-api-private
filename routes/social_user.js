@@ -14,7 +14,7 @@ router.post('/checkuser',function(req,res,next){
         },
         type : Sequelize.QueryTypes.SELECT
     }).then(result=>{
-        var token = jwt.sign({id:result['id'],usr_name : result[0]['usr_name'],usr_pass:result[0]['usr_pass']},'neneIsLife',{expiresIn:"1y",jwtid:result[0]['id'],algorithm : "HS512"})
+        var token = jwt.sign({id:result[0]['id'],usr_name : result[0]['usr_name'],usr_pass:result[0]['usr_pass']},'neneIsLife',{expiresIn:"1y",jwtid:result[0]['id'],algorithm : "HS512"})
         res.json({info_user:{id : result[0]['id'],display_name:result[0]['display_name'],avatar_src:result[0]['avatar_src']},token});
     }).catch(err=>{
         res.send("-1");
